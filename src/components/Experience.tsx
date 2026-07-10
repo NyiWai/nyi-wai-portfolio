@@ -50,7 +50,8 @@ function isImageLogo(logo?: string) {
 }
 
 function logoSrc(logo: string) {
-  return logo.startsWith("/") ? logo : `/${logo}`;
+  const clean = logo.replace(/^\//, "");
+  return `${import.meta.env.BASE_URL}${clean}`;
 }
 
 // Swap these out for your real projects — name, logo, category, year, status,

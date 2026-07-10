@@ -76,7 +76,7 @@ export default function PortraitArch() {
         ))} */}
 
         <img
-          src="/nyi-wai.png"
+          src="${import.meta.env.BASE_URL}nyi-wai.png"
           alt="Nyi Wai"
           width={320}
           height={380}
