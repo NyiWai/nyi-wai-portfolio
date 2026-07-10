@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Mail, Code2, Camera } from "lucide-react";
+import { Mail, Code2 } from "lucide-react";
 import PortraitArch from "./PortraitArch";
 import LinkedinIcon from "./LinkedinIcon";
 

@@ -1,11 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 
-const corners = [
-  "top-2 left-2",
-  "top-2 right-2 rotate-90",
-  "bottom-2 right-2 rotate-180",
-  "bottom-2 left-2 -rotate-90",
-];
+// const corners = [
+//   "top-2 left-2",
+//   "top-2 right-2 rotate-90",
+//   "bottom-2 right-2 rotate-180",
+//   "bottom-2 left-2 -rotate-90",
+// ];
 
 export default function PortraitArch() {
   return (

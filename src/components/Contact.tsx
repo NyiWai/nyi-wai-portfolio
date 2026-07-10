@@ -1,4 +1,4 @@
-import { Mail, Code2, Camera, ArrowUpRight } from "lucide-react";
+import { Mail, Code2, ArrowUpRight } from "lucide-react";
 import LinkedinIcon from "./LinkedinIcon";
 
 
