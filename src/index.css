@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0F172F;
+  --background-edge: #070A1A;
+  --surface: #141B38;
+  --surface-2: #182144;
+  --heading: #E8EDF7;
+  --body: #A7B0C2;
+  --muted: #7E879A;
+  --divider: #40485C;
+  --accent: #6E8CFF;
+  --accent-dim: #6E8CFF33;
+  --accent-2: #B583FF;
+  --accent-2-dim: #B583FF26;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-edge: var(--background-edge);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-heading: var(--heading);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-divider: var(--divider);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-dim: var(--accent-2-dim);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--body);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* faint blueprint / graph-paper grid — nods to the hand-drawn wireframe this site was built from */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, var(--divider) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--divider) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.14;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+.animate-orbit {
+  animation: spin-slow 26s linear infinite reverse;
+}
+
+/* faint horizontal scanline texture, laid over the whole page */
+.scanline-texture {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    var(--accent-dim) 3px,
+    transparent 4px
+  );
+  opacity: 0.5;
+}
+
+@keyframes scan-sweep {
+  0% { transform: translateY(-20%); opacity: 0; }
+  10% { opacity: 0.4; }
+  50% { opacity: 0.15; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(120%); opacity: 0; }
+}
+
+.animate-scan-sweep {
+  animation: scan-sweep 7s ease-in-out infinite;
+}
+
+/* subtle holographic text glow — used sparingly, on the one or two focal headings */
+.text-glow {
+  text-shadow: 0 0 22px var(--accent-dim), 0 0 2px var(--accent-dim);
+}
+
+/* soft accent glow on hover, for cards/chips/buttons that want a hologram-panel feel */
+.glow-border {
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.glow-border:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-dim), 0 0 26px var(--accent-dim);
+}
+
+/* brief "power-on" flicker for the hero heading on load */
+@keyframes flicker-in {
+  0% { opacity: 0; }
+  5% { opacity: 0.4; }
+  8% { opacity: 0.05; }
+  12% { opacity: 0.6; }
+  20% { opacity: 0.1; }
+  28% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.animate-flicker-in {
+  animation: flicker-in 1.2s steps(1, end) both;
+  animation-delay: 0.3s;
+}
