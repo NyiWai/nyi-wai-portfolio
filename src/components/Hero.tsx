@@ -2,6 +2,8 @@ import { lazy, Suspense } from "react";
 import { Mail, Code2 } from "lucide-react";
 import PortraitArch from "./PortraitArch";
 import LinkedinIcon from "./LinkedinIcon";
+import ErrorBoundary from "./ErrorBoundary";
+
 
 
 const HoloCore = lazy(() => import("./HoloCore"));
@@ -16,9 +18,11 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="grid-texture pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
-      <Suspense fallback={null}>
-        <HoloCore />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={null}>
+          <HoloCore />
+        </Suspense>
+      </ErrorBoundary>
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-[0.9fr_1.1fr] md:px-10">
         <div className="order-2 flex flex-col items-center gap-6 md:order-1 md:items-start animate-fade-up">
