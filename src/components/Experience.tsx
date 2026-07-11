@@ -20,10 +20,11 @@ const focus = [
 ];
 
 const stack = [
-  { group: "Languages", items: ["TypeScript", "JavaScript", "Python", "Java", "C++", "C", "PHP"] },
-  { group: "Frameworks", items: ["React", "Next.js", "Node.js", "Django", "React Native", "Laravel"] },
-  { group: "Data", items: ["PostgreSQL", "MySQL"] },
-  { group: "Infra", items: ["Docker", "AWS"] },
+  { group: "Languages", items: ["Python", "TypeScript", "JavaScript", "C++", "C", "PHP", "Java"] },
+  { group: "Library & Frameworks", items: ["React", "Next.js", "Node.js", "Django", "React Native", "Laravel"] },
+  { group: "Data", items: ["PostgreSQL", "MySQL", "SupaBase", "Firebase"] },
+  { group: "Infra", items: ["Docker", "AWS", "Linux"] },
+  { group: "DESIGN", items: ["Adobe Illustrador", "Figma", "Blender", "Canva"] },
 ];
 
 type Status = "launching" | "live" | "shipped";
